@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Portfolio demonstrations
+- Keep fictional evaluation scenarios and their rubric data in a browser-safe shared module, so the interactive showcase and its tests use the same examples.
