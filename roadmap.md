@@ -1,3 +1,3 @@
-- [ ] Build the portfolio sections and interactive evaluation showcase.
-- [ ] Add a factual downloadable CV profile and focused evaluation-data tests.
-- [ ] Verify the live page, mobile layout, interactions, and build status.
+- [x] Build the portfolio sections and interactive evaluation showcase.
+- [x] Add a factual downloadable CV profile and focused evaluation-data tests.
+- [x] Verify the live page, mobile layout, interactions, and build status.
