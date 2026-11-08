@@ -39,6 +39,7 @@ function Portfolio() {
   const [dimension, setDimension] = useState<EvaluationDimension>("Relevance");
   const [responseId, setResponseId] = useState<"A" | "B">("A");
   const [showImproved, setShowImproved] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const scenario = useMemo(
     () => evaluationScenarios.find((item) => item.id === scenarioId) ?? evaluationScenarios[0],
     [scenarioId],
@@ -73,8 +74,11 @@ function Portfolio() {
           <Button asChild variant="outline" size="sm" className="hidden rounded-full sm:inline-flex">
             <a href="/Favour-Dike-CV.pdf" download><Download aria-hidden="true" /> Download CV</a>
           </Button>
-          <a aria-label="Go to contact" href="#contact" className="flex size-10 items-center justify-center rounded-full border border-border md:hidden"><Menu size={18} /></a>
+          <Button type="button" variant="ghost" size="icon" aria-label={mobileMenuOpen ? "Close navigation" : "Open navigation"} aria-expanded={mobileMenuOpen} aria-controls="mobile-navigation" onClick={() => setMobileMenuOpen((open) => !open)} className="md:hidden">
+            {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+          </Button>
         </div>
+        {mobileMenuOpen && <nav id="mobile-navigation" aria-label="Mobile navigation" className="border-t border-border bg-background px-5 py-3 md:hidden"><div className="mx-auto flex max-w-7xl flex-col">{[["About", "#about"], ["Competencies", "#competencies"], ["Evaluation work", "#showcase"], ["Contact", "#contact"]].map(([label, href]) => <a key={href} href={href} onClick={() => setMobileMenuOpen(false)} className="border-b border-border py-3 text-sm last:border-0">{label}</a>)}</div></nav>}
       </header>
 
       <section id="home" className="editorial-grid relative scroll-mt-20">
